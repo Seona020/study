@@ -1,0 +1,30 @@
+def read_matrix(file_name):
+    matrix = []
+    with open(file_name, 'r') as f:
+        for line in f:
+            row = [float(x) for x in line.split()]
+            matrix.append(row)
+    return matrix
+
+def solve(matrix, vector):
+    size = len(matrix)
+    if size == 2:
+        det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+        x = (vector[0] * matrix[1][1] - vector[1] * matrix[0][1]) / det
+        y = (vector[1] * matrix[0][0] - vector[0] * matrix[1][0]) / det
+        return [x, y]
+    elif size == 3:
+        det_a = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1])
+        det_b = matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0])
+        det_c = matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0])
+        det = det_a - det_b + det_c
+        x = ((vector[0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]))
+            -(vector[1] * (matrix[0][1] * matrix[2][2] - matrix[0][2] * matrix[2][1]))
+            +(vector[2] * (matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1]))) / det
+        y = ((vector[1] * (matrix[0][0] * matrix[2][2] - matrix[0][2] * matrix[2][0]))
+            -(vector[0] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]))
+            -(vector[2] * (matrix[0][0] * matrix[1][2] - matrix[0][2] * matrix[1][0]))) / det
+        z = ((vector[0] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]))
+            -(vector[1] * (matrix[0][0] * matrix[2][1] - matrix[0][1] * matrix[2][0]))
+            +(vector[2] * (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]))) / det
+        return [x, y, z]
