@@ -95,3 +95,32 @@ int main() {
 }
 
 응 아니었고.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double r;
+    cout <<"반지름 입력: ";
+    cin >> r;
+    cout << "원의 넓이: " << 3.141592 * r * r << endl;
+    cout << "구의 부피: " << 3.141592 * (4.0/3.0) * r * r << endl;
+
+    return 0;
+}
+
+
+헤헿
+
+
+#include <stdio.h>
+
+int main() {
+    double r;
+    printf("반지름 입력: ");
+    scanf("%lf", &r);
+    printf("원의 넓이: %lf\n", 3.141592*r*r);
+    printf("구의 부피: %lf\n", (4.0 / 3.0) * 3.141592 *r*r);
+
+    return 0;
+}
