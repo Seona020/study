@@ -124,3 +124,33 @@ int main() {
 
     return 0;
 }
+
+##c++day2
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int count;
+    double number,sum=0.0, average;
+    do{
+        printf("실수 입력: ");
+        scanf("%lf", &number);
+        
+         if (number != 0.0) {
+            sum += number;
+            count++;
+         }
+        } while (number != 0.0);
+        
+         if (count == 0) {
+        printf("입력된 값이 없습니다.\n");
+    } else {
+        average = sum / count;
+        printf("합계: %.2lf\n", sum);
+        printf("평균: %.2lf\n", average);
+    
+    }
+    
+    return 0;
+}
