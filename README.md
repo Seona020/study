@@ -125,7 +125,7 @@ int main() {
     return 0;
 }
 
-##c++day2
+# c++day2
 #include <iostream>
 
 using namespace std;
@@ -154,3 +154,32 @@ int main() {
     
     return 0;
 }
+
+#include <fstream>
+using namespace std;
+
+int main(){
+    ifstream fin("a.txt");
+    ofstream fout("b.txt");
+    if(!fin || !fout) { cout << "파일 열기 실패"; return 1;}
+    
+    }
+
+    double min1 =9999;
+    double max1 =-9999;
+    double limit;
+
+     for(int i=0; i<15; i++) {
+         fin >> limit;
+         
+        if (limit < min1)
+            min1 = limit;
+        if (limit > max1)
+            max1 = limit;
+    }
+
+    fout << "최소값: " << min1 << endl;
+    fout << "최대값: " << max1 << endl;
+
+    fin.close(); fout.close();
+이거 아니래 ㅠ
