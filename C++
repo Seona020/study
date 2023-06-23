@@ -1,0 +1,35 @@
+# BMI
+#include <iostream>
+
+int main() {
+    float height, weight;
+
+    std::cout << "키 입력 (cm): ";
+    std::cin >> height;
+
+    std::cout << "체중 입력 (kg): ";
+    std::cin >> weight;
+
+    // 키를 미터 단위로 변환
+    float heightInMeter = height / 100.0;
+
+    // BMI 계산
+    float bmi = weight / (heightInMeter * heightInMeter);
+
+    std::cout << "-----------------------\n";
+    std::cout << "BMI = " << bmi << std::endl;
+
+    if (bmi < 18.5) {
+        std::cout << "저체중입니다." << std::endl;
+    } else if (bmi >= 18.5 && bmi < 23) {
+        std::cout << "정상체중입니다." << std::endl;
+    } else if (bmi >= 23 && bmi < 25) {
+        std::cout << "과체중입니다." << std::endl;
+    } else if (bmi >= 25 && bmi < 30) {
+        std::cout << "경도비만입니다." << std::endl;
+    } else {
+        std::cout << "고도비만입니다." << std::endl;
+    }
+
+    return 0;
+}
