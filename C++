@@ -1,4 +1,5 @@
-# BMI
+# BMI 뭐여 이건 크게 안 돼?? ㅡㅡ 아놔 
+'''
 #include <iostream>
 
 int main() {
@@ -33,3 +34,4 @@ int main() {
 
     return 0;
 }
+'''
