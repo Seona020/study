@@ -188,11 +188,20 @@ int main(){
 
 #include <iostream>
 #include "iu.h"
+#include "gong.h"
 using namespace std;
-
+using namespace iu;   //iu:: 써도 되고 안 써도 됨.
 int main(){
     cout<<"iu의 변수"<<endl;
-    cout<<a<<" "<<b<<" "<<c<<endl;
+    cout<<iu::a<<" "<<iu::b<<" "<<iu::c<<endl;
+    
+    cout<<"공유의 변수"<<endl;
+    cout<<gong::a<<endl;
     
     return 0;
     }
+    
+iu.h
+namespace iu{
+    int a=100,b=200,c=300;
+}
