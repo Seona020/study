@@ -183,3 +183,16 @@ int main(){
 
     fin.close(); fout.close();
 이거 아니래 ㅠ
+
+# 3day
+
+#include <iostream>
+#include "iu.h"
+using namespace std;
+
+int main(){
+    cout<<"iu의 변수"<<endl;
+    cout<<a<<" "<<b<<" "<<c<<endl;
+    
+    return 0;
+    }
