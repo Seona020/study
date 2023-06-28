@@ -58,3 +58,38 @@ int main()
     
     return 0;
 }
+# time
+#include <iostream>
+using namespace std;
+
+class ConvertSecond {
+private:
+    int hours, minutes, seconds;
+
+public:
+    ConvertSecond() : hours(0), minutes(0), seconds(0) {}
+
+    void setData() {
+        cout << "시(hour) 입력: ";
+        cin >> hours;
+        cout << "분(minute) 입력: ";
+        cin >> minutes;
+        cout << "초(second) 입력: ";
+        cin >> seconds;
+    }
+
+    int getResult() {
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+};
+
+int main() {
+    ConvertSecond a;
+    a.setData();
+    cout << "입력하신 시간은 총 " << a.getResult() << " 초입니다." << endl;
+
+    ConvertSecond b;
+    cout << "기본 시간은 총 " << b.getResult() << " 초입니다." << endl;
+
+    return 0;
+}
