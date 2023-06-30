@@ -129,3 +129,28 @@ int main() {
 
 코딩을 잘 하면 잘할수록 main이 짧아진대!!
 
+
+# 12장
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream fin("source.txt");
+    if (!fin) { cout << "파일 열기 오류"; return 0;}
+    
+    string s;
+    int n = 0;
+    while (getline(fin,s)) {
+            cout << n++ << "==>" << s << endl;
+        }
+    
+    cout << "-------------------" << endl;
+    cout << "총" << n << "라인" << endl;
+    fin.close();
+
+    return 0;
+
+}
+
