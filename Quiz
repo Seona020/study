@@ -1,0 +1,27 @@
+Quiz1.
+반지름(double형)을 입력 받은 후 원의 넓이와 구의 부피를 출력하세요.
+
+# c ver
+#include <stdio.h>
+
+int main(){
+    double r;
+    printf("반지름 입력: ");
+    scanf("%lf",&r);
+    printf("원의 넓이: %lf", 3.141592 * r * r);
+    printf("구의 부피 %lf", 3.141592 * (4.0/3.0) * r * r * r);
+    return 0;
+}
+
+# c++ ver
+#include <iostream>
+using namespace std;
+
+int main(){
+    double r;
+    cout << "반지름 입력: ";
+    cin >> r;
+    cout << "원의 넓이: " << r * r * 3.141592 << endl;
+    cout << "구의 부피: " << (4.0/3.0) * r * r * r *3.141592 ;
+    return 0;
+}
