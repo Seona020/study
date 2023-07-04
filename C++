@@ -154,3 +154,28 @@ int main() {
 
 }
 
+# 함수중복
+
+#include <iostream>
+using namespace std;
+
+double area(int radius) {
+    return 3.14159 * radius * radius;
+}
+
+double area(int width, int height) {
+    return width * height;
+}
+
+int main(){
+    int a,b;
+    cout << "반지름 입력: ";
+    cin >> a;
+    cout <<"원의 넓이는 " << area(a) << "입니다." <<endl;
+    
+    cout << "가로 세로 입력: ";
+    cin >> a >> b;
+    cout << "사각형의 넓이는 " << area(a,b) << "입니다." << endl;
+}
+
+
