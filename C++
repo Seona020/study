@@ -178,4 +178,29 @@ int main(){
     cout << "사각형의 넓이는 " << area(a,b) << "입니다." << endl;
 }
 
+#템플릿
+#include <iostream>
+#include <string>
+using namespace std;
+
+template <typename T>
+T arr_plus(T arr[], int length) {
+    T sum;
+    for (int i = 0; i < length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main() {
+    int iarr[] = { 1, 2, 3, 4, 5 };
+    double darr[] = { 1.1, 2.2, 3.3 };
+    string sarr[] = { "딸기", "바나나", "우유" };
+
+    cout << "정수배열 합은 " << arr_plus(iarr, 5) << endl;
+    cout << "실수배열 합은 " << arr_plus(darr, 3) << endl;
+    cout << "string배열 경우는 " << arr_plus(sarr, 3) << endl;
+
+    return 0;
+}
 
