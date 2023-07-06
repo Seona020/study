@@ -204,3 +204,21 @@ int main() {
     return 0;
 }
 
+# 10장 24번 문제
+
+#include <iostream>
+#include <random>
+using namespace std;
+
+int main(){
+    random_device rd;
+    mt19937 mt(rd());
+    
+    uniform_int_distribution<> dist(0, 100); 
+    uniform_real_distribution<> dist_real(0.0, 1.0);
+
+    for (int i = 0; i < 5; i++) cout << dist(mt) << endl;
+    for (int i = 0; i < 5; i++) cout << dist_real(mt) << endl;
+
+    return 0;
+}
