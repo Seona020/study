@@ -222,3 +222,27 @@ int main(){
 
     return 0;
 }
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    string s;
+    
+    cout <<"여러 줄 문자열을 집력하세요" << endl;
+    cout << "(마지막에 & 입력 후 엔터)"<<endl;
+    getline(cin,s,'&'); cin.ignore();
+    string f, r;
+    cout << "find:"; getline(cin,f);
+    cout << "replace:"; getline(cin,r);
+    
+    int sindex = 0;
+    while(true) {
+        int findex = s.find(f,sindex);
+        if(findex == -1) break;
+        s.replace(findex, f.length(), r);
+        sindex = findex + r.rlength();
+    }
+        cout << s << endl;
+}
