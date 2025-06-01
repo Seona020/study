@@ -22,3 +22,35 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string input, allText;
+    while (true) {
+        getline(cin, input);
+        size_t found = input.find('&');
+        if (found != string::npos) {
+            allText += input.substr(0, found);
+            break;
+        }
+        allText += input + " ";
+    }
+
+    // 전부 소문자로 변환
+    transform(allText.begin(), allText.end(), allText.begin(), ::tolower);
+
+    // "oop" 찾기
+    int count = 0;
+    for (size_t i = 0; i + 2 < allText.size(); i++) {
+        if (allText.substr(i, 3) == "oop") {
+            count++;
+        }
+    }
+
+    cout << count << endl;
+    return 0;
+}
